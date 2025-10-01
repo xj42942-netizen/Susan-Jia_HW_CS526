@@ -1,0 +1,16 @@
+Problem 1: Advantage of Tail Pointer in Linked List
+
+
+The main advantage of using a tail pointer in a linked list is improved 
+efficiency for append operations.
+
+Without Tail Pointer:
+- Time Complexity: O(n) 
+- Must traverse the entire list to find the last node
+
+With Tail Pointer:
+- Time Complexity: O(1)
+- Direct access to the last node without traversal
+
+
+The tail pointer uses minimal extra memory (one pointer) but provides significant performance improvement, changing append from O(n) to O(1). Besides reducing the append complexity, a tail pointer also makes it easier to implement a queue efficiently.
