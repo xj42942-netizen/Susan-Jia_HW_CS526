@@ -6,12 +6,9 @@ Problem 1
 Purpose:
 This program determines whether each string in an input file is a palindrome and outputs the total number of palindromes found in the file.
 
-
 Files Included:
-Problem1_HW3_XJ.py        # Python source code
-run_all_palindrome.sh     # Bash script to run all test files
-README.txt                # This file
-
+Problem1_XJ.py
+run_all_palindrome.sh
 
 How to Run:
 1. To test a single input file: python3 Problem1_XJ.py palindrome_0.txt
@@ -21,7 +18,6 @@ Output Format:
 Each output file contains:
 1. One line per string: "true" or "false"
 2. The last line shows the total number of palindromes
-
 
 Example:
 Input file (palindrome_0.txt):
