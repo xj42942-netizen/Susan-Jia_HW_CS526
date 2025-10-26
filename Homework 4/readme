@@ -1,1 +1,29 @@
+Problem 1
 
+How to Run:
+
+python3 Problem1_XJ.py
+
+Problem 2
+
+How to Run:
+
+python3 Problem2_XJ.py
+
+Input Files:
+fewest_1.txt, fewest_2.txt, fewest_3.txt
+
+Output File:
+answers_fewest.txt
+
+Problem 3
+
+How to Run:
+
+python3 Problem3_XJ.py
+
+Input Files:
+rightangles_1.txt, rightangles_2.txt, rightangles_3.txt
+
+Output File:
+Answers_angles.txt
