@@ -1,1 +1,72 @@
+CS526 Midterm
+Name: Susan Jia   
 
+===================================================================================================================================
+Problem 1: Snowfall
+
+Main idea:
+This program checks if any three consecutive days of snowfall make up more than half of the total snowfall.
+Since the input data is cumulative,
+I used subtraction to calculate each 3-day total quickly and avoid adding the same values repeatedly.
+
+How it works:
+1. Read the cumulative snowfall data from the input file.  
+2. Find the total snowfall (last value) and set a threshold = total / 2.  
+3. For each 3-day period, calculate: cumulative[i+2] - cumulative[i-1].  
+4. If any window is greater than the threshold, print “YES”, otherwise print “NO”.
+
+TIME COMPLEXITY: O(n)
+SPACE COMPLEXITY: O(1)
+
+===================================================================================================================================
+Problem 2: Pandemic
+
+Main idea:
+This program simulates how an infection spreads on a 5×5 grid.
+A healthy county becomes infected if two or more of its neighbors (up, down, left, or right) are 
+already infected.
+The spread continues day by day until no more changes occur.
+
+How it works:
+1. Read the grid and mark the initially infected cells.  
+2. Each day, count infected neighbors for every healthy cell.  
+3. Cells with two or more infected neighbors become infected the next day.  
+4. Apply all new infections at the same time.  
+5. Stop when the grid no longer changes, and print whether any healthy counties remain.
+
+TIME COMPLEXITY: O(d × n²)
+SPACE COMPLEXITY: O(n²)
+
+===================================================================================================================================
+Problem 3: SC
+
+Main idea:
+This program finds the longest sequence of items where only two different categories appear.
+The idea is similar to finding the longest substring with two distinct characters.
+
+How it works:
+1. Read the list of categories from the input file.  
+2. Use a sliding window to move through the list.  
+3. Keep track of categories inside the window using a small dictionary.  
+4. When a third category appears, stop extending that window.  
+5. Record the maximum number of items that fit this rule.
+
+TIME COMPLEXITY: O(n²)
+SPACE COMPLEXITY: O(1)
+
+===================================================================================================================================
+Problem 4: SPG
+
+Main idea:
+This program checks whether a puzzle board is valid.  
+Each row, column, and subgrid must contain unique symbols.
+
+How it works:
+1. Go through each row, column, and subgrid.  
+2. Use sets to check for duplicate symbols.  
+3. Ignore empty cells ('.').  
+4. Stop early if a duplicate is found and print “invalid”.  
+5. Otherwise, print “valid” once all checks are passed.
+
+TIME COMPLEXITY: O(n²)
+SPACE COMPLEXITY: O(n)
