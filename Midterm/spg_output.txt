@@ -1,0 +1,2 @@
+Testing spg_input1.txt: The board is valid
+Testing spg_input2.txt: The board is invalid

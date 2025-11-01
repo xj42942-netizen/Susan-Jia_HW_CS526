@@ -1,0 +1,2 @@
+Testing sc_input1.txt: 3 items were selected
+Testing sc_input2.txt: 4 items were selected

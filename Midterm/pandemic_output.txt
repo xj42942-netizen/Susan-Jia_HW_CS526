@@ -1,0 +1,2 @@
+Testing pandemic_input1.txt: There are healthy counties left
+Testing pandemic_input2.txt: There are no healthy counties left

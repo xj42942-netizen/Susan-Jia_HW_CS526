@@ -1,0 +1,5 @@
+snowfall_input1.txt solution: YES
+snowfall_input2.txt solution: NO
+snowfall_input3.txt solution: NO
+snowfall_input4.txt solution: YES
+snowfall_input5.txt solution: YES
