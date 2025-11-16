@@ -1,1 +1,62 @@
+------------------------------------------------------------------------------------------------------------------------
+Problem 1 – Binary Search Tree
+------------------------------------------------------------------------------------------------------------------------
+File: Problem1_SJ.py
+
+This program builds a Binary Search Tree (BST) using random numbers between 1 and 1000.
+It includes methods to add, delete, search, and print nodes in the tree.
+
+Steps performed:
+1. Generate a random list containing between 5 and 50 numbers.  
+2. Build a BST and print the tree using inorder traversal.  
+3. Delete one random node and print the updated tree.  
+4. Add one new random node and print again.  
+5. Search for one existing node shown as “Found”，and one number not in the tree shown as “Not Found”.
+
+How I ran it:  
+I ran the program in the terminal using the command:
+python3 Problem1_SJ.py  
+The program printed the output in the terminal, and I saved the result as a text file for submission.
+
+------------------------------------------------------------------------------------------------------------------------
+Problem 2 – Vowel Morse Code
+------------------------------------------------------------------------------------------------------------------------
+File: Problem2_SJ.py
+
+This program reads Morse code sequences from four text files:  
+vowel_input1.txt, vowel_input2.txt, vowel_input3.txt, and vowel_input4.txt.  
+Each file contains one Morse code string.  
+The algorithm calculates how many different ways the string can be split into valid vowel codes.
+
+The valid Morse codes for vowels are:
+A = .-  
+E = .  
+I = ..  
+O = ---  
+U = ..-
+
+The program uses a dynamic programming approach to count all possible vowel combinations.
+
+How I ran it:  
+I ran the program in the terminal using the command:
+python3 Problem2_SJ.py  
+The results were displayed in the terminal and saved as text output files.
+
+------------------------------------------------------------------------------------------------------------------------
+Problem 3 – Longest Alternating Increasing Sequence
+------------------------------------------------------------------------------------------------------------------------
+File: Problem3_SJ.py
+
+This program reads six text files:  
+longest_seq1.txt, longest_seq2.txt, longest_seq3.txt, longest_seq4.txt, longest_seq5.txt, and longest_seq6.txt.  
+Each file contains two integer lists (A and B).  
+The goal is to find the longest sequence that alternates between A and B,  
+where each next number is greater than the previous one.
+
+The algorithm uses recursion with memoization to find the longest valid alternating sequence.
+
+How I ran it:  
+I ran the program in the terminal using the command:
+python3 Problem3_SJ.py  
+The results were printed in the terminal and saved as text files as well.
 
