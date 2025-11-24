@@ -1,1 +1,61 @@
+Problem 1 – Merge Sort, Quick Sort, Insertion Sort
+--------------------------------------------------
 
+This program sorts three input files:
+input_small.txt
+input_medium.txt
+input_large.txt
+
+For each file, it runs:
+Merge Sort
+Quick Sort
+Insertion Sort
+
+Outputs are saved to:
+problem1_small_output.txt
+problem1_medium_output.txt
+problem1_large_output.txt
+
+How to Run:
+Inside the HW6 folder, run:
+python3 Problem1_SJ.py
+
+The program automatically loads all input files.
+
+Problem 2 – Radix Sort
+----------------------
+
+This program sorts three input files:
+input_small.txt
+input_medium.txt
+input_large.txt
+
+It applies Radix Sort to each file.
+
+Outputs are saved to:
+small_radix_output.txt
+medium_radix_output.txt
+large_radix_output.txt
+
+How to Run:
+Inside the HW6 folder, run:
+python3 Problem2_SJ.py
+
+Problem 3 – Gale-Shapley Algorithm
+----------------------------------
+
+This program processes three preference list files:
+marriage_ten.txt
+marriage_hundred.txt
+marriage_thousand.txt
+
+It computes the stable matching for each data set using the Gale-Shapley algorithm.
+
+Outputs are saved to:
+ten_output.txt
+hundred_output.txt
+thousand_output.txt
+
+How to Run:
+Inside the HW6 folder, run:
+python3 Problem3_SJ.py
