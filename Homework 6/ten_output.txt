@@ -1,0 +1,13 @@
+Processing: marriage_ten.txt
+
+Stable Matching:
+Robert Roberta
+Benjamin Christine
+David Cynthia
+Kenneth Julia
+James Stella
+Shane Karen
+John Marjorie
+Eddie Florence
+Barry Deborah
+Travis Katie
