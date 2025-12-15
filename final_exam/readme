@@ -1,106 +1,113 @@
-CS 526 Final Exam
+CS526 Final Project
 Name: Susan Jia
 
-FILES INCLUDED
 ==============
-proeblem1_sj.py        - Problem 1: Dam Breaking
-problem2_sj.py         - Problem 2: Downhill Skier
+Files Included
+==============
 
-flood_1.txt to flood_12.txt     - Input files for Problem 1
-ski_input1.txt to ski_input3.txt - Input files for Problem 2
+Main source files:
+problem1_sj.py
+problem2_sj.py
 
-problem1_results.txt   - Combined output for Problem 1 (optional)
-problem2_results.txt   - Combined output for Problem 2 (optional)
+Input files:
+flood_1.txt to flood_12.txt
+ski_input1.txt to ski_input3.txt
 
-HOW TO RUN
+Documentation and records:
+Screenshots showing terminal execution for all test cases
+
+problem1_results.txt
+problem2_results.txt
+
+==================
+Heart of Algorithm
+==================
+
+Problem 1: Dam Breaking
+
+Problem Understanding:
+Cracks appear over time and allow water to leak into the village. Each time unit,
+all unfixed cracks increase in size by one unit, but only one crack can be fixed
+per time unit. The total water level increases based on the combined leakage and
+decreases by a fixed drainage amount.
+
+Strategy Choice:
+A greedy strategy is used. At each time unit, the crack with the largest current
+size is fixed. Since only one crack can be repaired per time unit, fixing the
+largest crack produces the greatest immediate reduction in water inflow and
+prevents the most dangerous crack from growing even larger in future time units.
+
+Why This Works:
+Larger cracks not only leak more water in the current time unit, but also become
+increasingly harmful over time due to continuous growth. Prioritizing the
+largest crack therefore minimizes both short-term and long-term water inflow.
+
+Implementation Details:
+A max-heap (priority queue) is used to efficiently select the largest crack. If a
+crack has initial size s and appears at time a, it is stored in the heap using
+the key (s - a). At any time t, the current size is (s - a) + t, allowing the
+largest crack to be selected in O(log n) time.
+
+The simulation strictly follows the time-step order specified in the problem:
+crack arrivals, one repair, water update, flood check, and crack growth.
+
+Time Complexity:
+The overall time complexity is O(n log n).
+
+
+Problem 2: Downhill Skier
+-------------------------
+
+Problem Understanding:
+Given a grid of altitudes, the task is to find the longest path such that each
+step moves to a strictly lower neighboring cell. Movement is allowed in all
+eight directions.
+
+Solution Approach:
+This problem can be modeled as finding the longest path in a directed acyclic
+graph, since altitude strictly decreases and cycles are impossible. A dynamic
+programming approach is used.
+
+State Definition:
+dp[i][j] represents the maximum number of downhill steps (edges) starting from
+cell (i, j).
+
+Key Insight and Order of Computation:
+Each dp value depends only on neighboring cells with lower altitude. By
+processing all cells in increasing order of altitude, all required dp values
+are computed before a cell is evaluated. This avoids recursion and ensures
+efficiency.
+
+Computation:
+After sorting all cells by altitude, dp values are computed as follows:
+dp[i][j] = max(dp[lower-altitude neighbors]) + 1
+If a cell has no lower neighbors, dp[i][j] is set to 0. The final answer is the
+maximum dp value across all cells.
+
+Time Complexity:
+Sorting the m by n grid cells dominates the runtime, resulting in a total time
+complexity of O(mn log(mn)).
+
+==========
+How to Run
 ==========
 
-Problem 1 - Dam Breaking
+Problem 1: Dam Breaking
 
-Run a single input:
-python3 proeblem1_sj.py < flood_1.txt
+Run a single test:
+python3 problem1_sj.py < flood_1.txt
 
-Run all inputs while printing to terminal and saving results:
-echo "flood_1.txt" | tee problem1_results.txt
-python3 proeblem1_sj.py < flood_1.txt | tee -a problem1_results.txt
-(Repeat for flood_2.txt through flood_12.txt)
+Run all tests:
+Run the program sequentially on each input file from flood_1.txt to flood_12.txt
+using standard input redirection.
 
+Problem 2: Downhill Skier
 
-Problem 2 - Downhill Skier
---------------------------
-
-Run a single input:
+Run a single test:
 python3 problem2_sj.py < ski_input1.txt
 
-Run all inputs while printing to terminal and saving results:
-echo "ski_input1.txt" | tee problem2_results.txt
-python3 problem2_sj.py < ski_input1.txt | tee -a problem2_results.txt
-(Repeat for ski_input2.txt and ski_input3.txt)
+Run additional tests:
+python3 problem2_sj.py < ski_input2.txt
+python3 problem2_sj.py < ski_input3.txt
 
-OUTPUT FORMAT
-=============
-
-Problem 1:
-If flooding occurs, the output is:
-FLOOD
-<t>
-<water>
-
-If flooding does not occur, the output is:
-SAFE
-<maximum_water>
-
-Problem 2:
-The output is a single integer representing the maximum number
-of downhill steps (edges).
-
-HEART OF THE ALGORITHM
-======================
-
-Problem 1 - Dam Breaking
-
-At each time unit, unfixed cracks allow water to flow into the village,
-and all unfixed cracks grow larger over time. Since only one crack can
-be fixed per time unit, the key decision is which crack to fix.
-
-The greedy strategy is to always fix the crack with the largest current
-size. This choice minimizes the incoming water immediately and prevents
-that crack from growing larger and contributing even more water in
-future time units.
-
-To implement this efficiently, each crack is stored in a priority queue
-using the value (initial_size - appearance_time) as its key. At time t,
-the current size of a crack is this key plus t. This allows the algorithm
-to always identify the largest current crack in logarithmic time.
-
-The simulation follows the exact time-step order specified in the problem.
-The overall time complexity is O(n log n), which is efficient for large
-inputs.
-
-
-Problem 2 - Downhill Skier
---------------------------
-
-The goal is to find the longest downhill path in a grid where each move
-goes to a strictly lower altitude. Each cell may move to any of its
-eight neighboring cells.
-
-Dynamic programming is used, where dp[i][j] represents the maximum
-number of downhill steps (edges) starting from cell (i, j).
-
-Cells are processed in increasing order of altitude so that when dp[i][j]
-is computed, all lower neighbors have already been evaluated. For each
-cell, the algorithm checks all lower neighbors and takes the maximum
-dp value plus one.
-
-This approach avoids recursion and ensures correctness and efficiency.
-The time complexity is O(mn log(mn)) due to sorting the grid cells.
-
-NOTES
-=====
-
-Fast input reading is used for performance.
-Problem 2 outputs the number of steps (edges), which matches the
-provided answer key.
-Screenshots of terminal execution for all provided inputs are included.
 
