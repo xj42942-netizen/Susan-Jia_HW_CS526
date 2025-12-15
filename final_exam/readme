@@ -1,1 +1,106 @@
+CS 526 Final Exam
+Name: Susan Jia
+
+FILES INCLUDED
+==============
+proeblem1_sj.py        - Problem 1: Dam Breaking
+problem2_sj.py         - Problem 2: Downhill Skier
+
+flood_1.txt to flood_12.txt     - Input files for Problem 1
+ski_input1.txt to ski_input3.txt - Input files for Problem 2
+
+problem1_results.txt   - Combined output for Problem 1 (optional)
+problem2_results.txt   - Combined output for Problem 2 (optional)
+
+HOW TO RUN
+==========
+
+Problem 1 - Dam Breaking
+
+Run a single input:
+python3 proeblem1_sj.py < flood_1.txt
+
+Run all inputs while printing to terminal and saving results:
+echo "flood_1.txt" | tee problem1_results.txt
+python3 proeblem1_sj.py < flood_1.txt | tee -a problem1_results.txt
+(Repeat for flood_2.txt through flood_12.txt)
+
+
+Problem 2 - Downhill Skier
+--------------------------
+
+Run a single input:
+python3 problem2_sj.py < ski_input1.txt
+
+Run all inputs while printing to terminal and saving results:
+echo "ski_input1.txt" | tee problem2_results.txt
+python3 problem2_sj.py < ski_input1.txt | tee -a problem2_results.txt
+(Repeat for ski_input2.txt and ski_input3.txt)
+
+OUTPUT FORMAT
+=============
+
+Problem 1:
+If flooding occurs, the output is:
+FLOOD
+<t>
+<water>
+
+If flooding does not occur, the output is:
+SAFE
+<maximum_water>
+
+Problem 2:
+The output is a single integer representing the maximum number
+of downhill steps (edges).
+
+HEART OF THE ALGORITHM
+======================
+
+Problem 1 - Dam Breaking
+
+At each time unit, unfixed cracks allow water to flow into the village,
+and all unfixed cracks grow larger over time. Since only one crack can
+be fixed per time unit, the key decision is which crack to fix.
+
+The greedy strategy is to always fix the crack with the largest current
+size. This choice minimizes the incoming water immediately and prevents
+that crack from growing larger and contributing even more water in
+future time units.
+
+To implement this efficiently, each crack is stored in a priority queue
+using the value (initial_size - appearance_time) as its key. At time t,
+the current size of a crack is this key plus t. This allows the algorithm
+to always identify the largest current crack in logarithmic time.
+
+The simulation follows the exact time-step order specified in the problem.
+The overall time complexity is O(n log n), which is efficient for large
+inputs.
+
+
+Problem 2 - Downhill Skier
+--------------------------
+
+The goal is to find the longest downhill path in a grid where each move
+goes to a strictly lower altitude. Each cell may move to any of its
+eight neighboring cells.
+
+Dynamic programming is used, where dp[i][j] represents the maximum
+number of downhill steps (edges) starting from cell (i, j).
+
+Cells are processed in increasing order of altitude so that when dp[i][j]
+is computed, all lower neighbors have already been evaluated. For each
+cell, the algorithm checks all lower neighbors and takes the maximum
+dp value plus one.
+
+This approach avoids recursion and ensures correctness and efficiency.
+The time complexity is O(mn log(mn)) due to sorting the grid cells.
+
+NOTES
+=====
+
+Fast input reading is used for performance.
+Problem 2 outputs the number of steps (edges), which matches the
+provided answer key.
+Screenshots of terminal execution for all provided inputs are included.
 
