@@ -1,0 +1,6 @@
+ski_input1.txt
+9
+ski_input2.txt
+10
+ski_input3.txt
+273
